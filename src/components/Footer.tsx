@@ -21,7 +21,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick, openAdminModal, sett
 
   return (
     <>
-      <footer className="bg-slate-950 text-slate-400 border-t border-slate-850 pt-16 pb-12">
+      <footer className="bg-[#050e1b] text-slate-400 border-t border-[#142845] pt-16 pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
             {/* Col 1 & 2: Brand & Description */}
@@ -34,8 +34,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick, openAdminModal, sett
                   referrerPolicy="no-referrer"
                 />
                 <div>
-                  <span className="text-lg font-bold text-white tracking-tight block leading-none">
-                    Digital Minds<span className="text-blue-500 text-sm font-semibold ml-1">Ltd</span>
+                  <span className="text-lg font-bold text-white tracking-tight block leading-none font-heading">
+                    Digital Minds<span className="text-amber-400 text-sm font-semibold ml-1">Ltd</span>
                   </span>
                   <span className="text-[11px] text-slate-400 font-medium block mt-0.5">
                     ICT & Technology Solutions
@@ -43,33 +43,33 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick, openAdminModal, sett
                 </div>
               </div>
 
-              <p className="text-xs text-slate-400 leading-relaxed font-normal max-w-sm">
+              <p className="text-xs text-slate-300 leading-relaxed font-normal max-w-sm">
                 A full-service ICT company engineering custom software, enterprise platforms,
                 applied artificial intelligence, and Zero-Trust cloud infrastructure.
               </p>
 
-              <div className="text-xs text-blue-400 font-medium italic">
+              <div className="text-xs text-amber-400 font-medium italic">
                 "Think Digital. Build Intelligent Solutions."
               </div>
 
               {/* Direct Contacts */}
-              <div className="pt-2 space-y-2 text-xs">
+              <div className="pt-2 space-y-2.5 text-xs">
                 <a
                   href={`tel:${phone.replace(/\s+/g, '')}`}
-                  className="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition-colors"
+                  className="flex items-center gap-2 text-slate-300 hover:text-amber-400 transition-colors"
                 >
-                  <Phone className="w-3.5 h-3.5 text-blue-500 shrink-0" />
-                  <span>{phone}</span>
+                  <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                  <span className="font-heading tracking-wide">{phone}</span>
                 </a>
                 <a
                   href={`mailto:${email}`}
-                  className="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition-colors"
+                  className="flex items-center gap-2 text-slate-300 hover:text-amber-400 transition-colors"
                 >
-                  <Mail className="w-3.5 h-3.5 text-blue-500 shrink-0" />
+                  <Mail className="w-3.5 h-3.5 text-amber-400 shrink-0" />
                   <span>{email}</span>
                 </a>
                 <div className="flex items-start gap-2 text-slate-400">
-                  <MapPin className="w-3.5 h-3.5 text-blue-500 shrink-0 mt-0.5" />
+                  <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
                   <span>{address}</span>
                 </div>
               </div>
@@ -77,16 +77,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick, openAdminModal, sett
 
             {/* Col 3: Navigation */}
             <div>
-              <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4">
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 font-heading">
                 Navigation
               </h4>
-              <ul className="space-y-2 text-xs">
+              <ul className="space-y-2.5 text-xs">
                 {['home', 'about', 'services', 'solutions', 'projects', 'insights', 'contact'].map(
                   (id) => (
                     <li key={id}>
                       <button
                         onClick={() => onNavClick(id)}
-                        className="hover:text-white transition-colors capitalize cursor-pointer"
+                        className="hover:text-amber-400 transition-colors capitalize cursor-pointer text-slate-300"
                       >
                         {id === 'about'
                           ? 'About Us'
@@ -102,10 +102,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick, openAdminModal, sett
 
             {/* Col 4: Core Services */}
             <div>
-              <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4">
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 font-heading">
                 Core Services
               </h4>
-              <ul className="space-y-2 text-xs">
+              <ul className="space-y-2.5 text-xs">
                 {[
                   'Software Development',
                   'Web Development',
@@ -119,7 +119,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick, openAdminModal, sett
                   <li key={idx}>
                     <button
                       onClick={() => onNavClick('services')}
-                      className="hover:text-white transition-colors cursor-pointer text-left"
+                      className="hover:text-amber-400 transition-colors cursor-pointer text-left text-slate-300"
                     >
                       {s}
                     </button>
@@ -130,14 +130,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick, openAdminModal, sett
 
             {/* Col 5: Governance & Admin */}
             <div>
-              <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4">
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4 font-heading">
                 Compliance & Portal
               </h4>
-              <ul className="space-y-2 text-xs">
+              <ul className="space-y-2.5 text-xs">
                 <li>
                   <button
                     onClick={() => setLegalModal('privacy')}
-                    className="hover:text-white transition-colors cursor-pointer"
+                    className="hover:text-amber-400 transition-colors cursor-pointer text-slate-300"
                   >
                     Privacy Policy
                   </button>
@@ -145,17 +145,17 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick, openAdminModal, sett
                 <li>
                   <button
                     onClick={() => setLegalModal('terms')}
-                    className="hover:text-white transition-colors cursor-pointer"
+                    className="hover:text-amber-400 transition-colors cursor-pointer text-slate-300"
                   >
                     Terms & Conditions
                   </button>
                 </li>
-                <li className="pt-2">
+                <li className="pt-3">
                   <button
                     onClick={openAdminModal}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 transition-colors text-xs cursor-pointer"
+                    className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[#091b35] border border-[#142845] text-slate-300 hover:text-white hover:border-amber-500/40 transition-colors text-xs cursor-pointer font-heading"
                   >
-                    <Shield className="w-3.5 h-3.5 text-blue-400" />
+                    <Shield className="w-3.5 h-3.5 text-amber-400" />
                     <span>Administrator Console</span>
                   </button>
                 </li>
@@ -164,7 +164,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick, openAdminModal, sett
           </div>
 
           {/* Bottom Bar */}
-          <div className="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <div className="pt-8 border-t border-[#142845] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
             <div>
               © {new Date().getFullYear()} Digital Minds Ltd. All rights reserved.
             </div>
@@ -173,7 +173,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick, openAdminModal, sett
               <span>Lusaka, Zambia</span>
               <button
                 onClick={scrollToTop}
-                className="flex items-center gap-1 hover:text-slate-300 transition-colors cursor-pointer"
+                className="flex items-center gap-1 hover:text-amber-400 transition-colors cursor-pointer"
                 title="Scroll to top"
               >
                 <span>Back to top</span>

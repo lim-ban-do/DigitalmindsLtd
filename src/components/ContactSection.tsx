@@ -95,14 +95,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ settings, onSucc
   };
 
   return (
-    <section id="contact" className="py-20 bg-slate-900/50 border-b border-slate-850">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 bg-[#071325] border-b border-[#142845] relative overflow-hidden">
+      <div className="absolute top-1/2 left-0 w-[500px] h-[400px] bg-amber-500/5 blur-[140px] rounded-full pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mb-12">
-          <div className="text-xs font-semibold uppercase tracking-widest text-blue-400 mb-2">
+          <div className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">
             Direct Communication
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight [text-wrap:balance]">
-            Contact Our Technology Practice
+          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight font-heading [text-wrap:balance]">
+            Contact Our Technology Practice<span className="text-amber-400">.</span>
           </h2>
           <p className="mt-3 text-base text-slate-300 font-normal">
             Whether you have a specific software brief, require an infrastructure assessment, or wish to explore a
@@ -112,24 +114,24 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ settings, onSucc
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           {/* Left Column: Official Contact Card */}
-          <div className="lg:col-span-5 flex flex-col justify-between p-6 sm:p-8 rounded-2xl bg-slate-950 border border-slate-800">
+          <div className="lg:col-span-5 flex flex-col justify-between p-6 sm:p-8 rounded-2xl bg-[#091b35]/75 border border-[#142845] backdrop-blur-md shadow-xl shadow-black/20">
             <div>
-              <h3 className="text-xl font-bold text-white mb-2">Digital Minds Ltd</h3>
-              <p className="text-xs text-slate-400 mb-8 italic">
+              <h3 className="text-xl font-bold text-white mb-2 font-heading">Digital Minds Ltd</h3>
+              <p className="text-xs text-amber-300/80 mb-8 italic">
                 "Think Digital. Build Intelligent Solutions."
               </p>
 
               <div className="space-y-6">
                 {/* Phone */}
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
                     <div className="text-xs text-slate-400 font-medium">Telephone Inquiries</div>
                     <a
                       href={`tel:${phone.replace(/\s+/g, '')}`}
-                      className="text-sm font-semibold text-white hover:text-blue-400 transition-colors block mt-0.5"
+                      className="text-sm font-semibold text-white hover:text-amber-400 transition-colors block mt-0.5 font-heading"
                     >
                       {phone}
                     </a>
@@ -139,14 +141,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ settings, onSucc
 
                 {/* Email */}
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div>
                     <div className="text-xs text-slate-400 font-medium">Official Email</div>
                     <a
                       href={`mailto:${email}`}
-                      className="text-sm font-semibold text-white hover:text-blue-400 transition-colors block mt-0.5"
+                      className="text-sm font-semibold text-white hover:text-amber-400 transition-colors block mt-0.5 font-heading"
                     >
                       {email}
                     </a>
@@ -156,12 +158,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ settings, onSucc
 
                 {/* Physical Location */}
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
                     <div className="text-xs text-slate-400 font-medium">Corporate Office</div>
-                    <div className="text-xs font-semibold text-slate-200 mt-0.5 leading-relaxed">
+                    <div className="text-xs font-semibold text-slate-200 mt-0.5 leading-relaxed font-heading">
                       {address}
                     </div>
                   </div>
@@ -169,29 +171,29 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ settings, onSucc
 
                 {/* Working Hours */}
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
                     <Clock className="w-4 h-4" />
                   </div>
                   <div>
                     <div className="text-xs text-slate-400 font-medium">Operating Schedule</div>
-                    <div className="text-xs font-semibold text-slate-200 mt-0.5">
+                    <div className="text-xs font-semibold text-slate-200 mt-0.5 font-heading">
                       {hours}
                     </div>
-                    <span className="text-[11px] text-slate-500">Engineering emergency on-call 24/7</span>
+                    <span className="text-[11px] text-amber-400/80">Engineering emergency on-call 24/7</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-slate-900 text-[11px] text-slate-500">
+            <div className="mt-8 pt-6 border-t border-[#142845] text-[11px] text-slate-400">
               Registered ICT Company in the Republic of Zambia.
             </div>
           </div>
 
           {/* Right Column: Contact Form */}
-          <div className="lg:col-span-7 p-6 sm:p-8 rounded-2xl bg-slate-950 border border-slate-800">
-            <h3 className="text-xl font-bold text-white mb-1">Send an Inquiry</h3>
-            <p className="text-xs text-slate-400 mb-6">
+          <div className="lg:col-span-7 p-6 sm:p-8 rounded-2xl bg-[#091b35]/75 border border-[#142845] backdrop-blur-md shadow-xl shadow-black/20">
+            <h3 className="text-xl font-bold text-white mb-1 font-heading">Send an Inquiry</h3>
+            <p className="text-xs text-slate-300 mb-6">
               Complete the fields below and our team will get in touch directly.
             </p>
 
@@ -335,7 +337,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ settings, onSucc
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Detail what you are looking to build, any deadlines, specific problems to solve..."
-                  className="w-full bg-slate-900 border border-slate-800 rounded-lg p-3 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-blue-500"
+                  className="w-full bg-[#071325] border border-[#142845] rounded-lg p-3 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-amber-400"
                 />
               </div>
 
@@ -343,14 +345,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ settings, onSucc
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-500 active:bg-blue-700 disabled:opacity-50 rounded-lg shadow-md shadow-blue-600/20 transition-all cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs font-bold uppercase tracking-wider text-slate-950 bg-amber-400 hover:bg-amber-300 active:bg-amber-500 disabled:opacity-50 rounded-md shadow-md shadow-amber-400/25 transition-all cursor-pointer"
                 >
                   {isSubmitting ? (
                     <span>Submitting Message...</span>
                   ) : (
                     <>
                       <span>Submit Inquiry</span>
-                      <Send className="w-3.5 h-3.5" />
+                      <Send className="w-3.5 h-3.5 text-slate-950" />
                     </>
                   )}
                 </button>

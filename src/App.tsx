@@ -88,11 +88,11 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen bg-[#071325] text-slate-100 flex flex-col font-sans selection:bg-amber-500 selection:text-slate-950">
       {/* Toast Notification */}
       {toastNotification && (
-        <div className="fixed bottom-6 right-6 z-50 p-4 rounded-xl bg-slate-900 border border-emerald-500/50 shadow-2xl flex items-center gap-3 text-xs text-white animate-in slide-in-from-bottom-3 duration-200">
-          <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
+        <div className="fixed bottom-6 right-6 z-50 p-4 rounded-xl bg-[#091b35] border border-amber-500/50 shadow-2xl shadow-black/50 flex items-center gap-3 text-xs text-white animate-in slide-in-from-bottom-3 duration-200">
+          <CheckCircle2 className="w-5 h-5 text-amber-400 shrink-0" />
           <span>{toastNotification}</span>
         </div>
       )}
@@ -184,15 +184,16 @@ export default function App() {
 
         {currentTab === 'services' && (
           <>
-            <div className="bg-slate-900/50 py-12 border-b border-slate-850">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <span className="text-xs font-semibold uppercase tracking-widest text-blue-400">
+            <div className="bg-[#091b35] py-14 border-b border-[#142845] relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-amber-500/5 via-transparent to-amber-500/5 pointer-events-none" />
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <span className="text-xs font-semibold uppercase tracking-widest text-amber-400">
                   Engineering Capabilities
                 </span>
-                <h1 className="text-3xl sm:text-4xl font-extrabold text-white mt-2">
-                  Full-Lifecycle ICT & Technology Services
+                <h1 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 font-heading">
+                  Full-Lifecycle ICT & Technology Services<span className="text-amber-400">.</span>
                 </h1>
-                <p className="mt-3 text-sm text-slate-300 max-w-xl mx-auto font-normal">
+                <p className="mt-3 text-sm sm:text-base text-slate-300 max-w-xl mx-auto font-normal">
                   Explore our eight dedicated technology practices, complete with specifications,
                   business benefits, and service level assurances.
                 </p>
@@ -209,15 +210,16 @@ export default function App() {
 
         {currentTab === 'solutions' && (
           <>
-            <div className="bg-slate-900/50 py-12 border-b border-slate-850">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <span className="text-xs font-semibold uppercase tracking-widest text-blue-400">
+            <div className="bg-[#091b35] py-14 border-b border-[#142845] relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-amber-500/5 via-transparent to-amber-500/5 pointer-events-none" />
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <span className="text-xs font-semibold uppercase tracking-widest text-amber-400">
                   Sector Specializations
                 </span>
-                <h1 className="text-3xl sm:text-4xl font-extrabold text-white mt-2">
-                  Industry Management Systems & Portals
+                <h1 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 font-heading">
+                  Industry Management Systems & Portals<span className="text-amber-400">.</span>
                 </h1>
-                <p className="mt-3 text-sm text-slate-300 max-w-xl mx-auto font-normal">
+                <p className="mt-3 text-sm sm:text-base text-slate-300 max-w-xl mx-auto font-normal">
                   Customizable architecture blueprints for education, healthcare, agriculture,
                   finance, real estate, government, and multi-branch retail.
                 </p>
@@ -233,15 +235,16 @@ export default function App() {
 
         {currentTab === 'projects' && (
           <>
-            <div className="bg-slate-900/50 py-12 border-b border-slate-850">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <span className="text-xs font-semibold uppercase tracking-widest text-blue-400">
+            <div className="bg-[#091b35] py-14 border-b border-[#142845] relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-amber-500/5 via-transparent to-amber-500/5 pointer-events-none" />
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <span className="text-xs font-semibold uppercase tracking-widest text-amber-400">
                   Work & Architecture
                 </span>
-                <h1 className="text-3xl sm:text-4xl font-extrabold text-white mt-2">
-                  Systems Portfolio & Architecture Blueprints
+                <h1 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 font-heading">
+                  Systems Portfolio & Architecture Blueprints<span className="text-amber-400">.</span>
                 </h1>
-                <p className="mt-3 text-sm text-slate-300 max-w-xl mx-auto font-normal">
+                <p className="mt-3 text-sm sm:text-base text-slate-300 max-w-xl mx-auto font-normal">
                   Explore demonstration architectures and production systems engineered by Digital Minds Ltd.
                 </p>
               </div>
@@ -260,15 +263,16 @@ export default function App() {
 
         {currentTab === 'insights' && (
           <>
-            <div className="bg-slate-900/50 py-12 border-b border-slate-850">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <span className="text-xs font-semibold uppercase tracking-widest text-blue-400">
+            <div className="bg-[#091b35] py-14 border-b border-[#142845] relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-amber-500/5 via-transparent to-amber-500/5 pointer-events-none" />
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <span className="text-xs font-semibold uppercase tracking-widest text-amber-400">
                   Technology Briefings
                 </span>
-                <h1 className="text-3xl sm:text-4xl font-extrabold text-white mt-2">
-                  Digital Minds Technology Insights
+                <h1 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 font-heading">
+                  Digital Minds Technology Insights<span className="text-amber-400">.</span>
                 </h1>
-                <p className="mt-3 text-sm text-slate-300 max-w-xl mx-auto font-normal">
+                <p className="mt-3 text-sm sm:text-base text-slate-300 max-w-xl mx-auto font-normal">
                   Deep-dive research on software architecture, enterprise cybersecurity, practical AI,
                   and corporate digital transformation.
                 </p>

@@ -41,14 +41,16 @@ export const ProcessSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-slate-900/40 border-b border-slate-850">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-[#061224] border-b border-[#142845] relative overflow-hidden">
+      <div className="absolute top-1/2 left-1/4 w-[450px] h-[350px] bg-amber-500/5 blur-[130px] rounded-full pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mb-16">
-          <div className="text-xs font-semibold uppercase tracking-widest text-blue-400 mb-2">
+          <div className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">
             Engineering Methodology
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight [text-wrap:balance]">
-            Our Disciplined Five-Step Development Process
+          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight font-heading [text-wrap:balance]">
+            Our Disciplined Five-Step Development Process<span className="text-amber-400">.</span>
           </h2>
           <p className="mt-3 text-base text-slate-300 font-normal">
             Predictable outcomes require structured execution. Every Digital Minds project follows our proven
@@ -63,28 +65,30 @@ export const ProcessSection: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="relative p-5 rounded-xl bg-slate-950 border border-slate-800 hover:border-slate-700 transition-colors flex flex-col justify-between"
+                className="relative p-5 rounded-xl bg-[#091b35]/70 border border-[#142845] hover:border-amber-500/40 hover:bg-[#0c2242] backdrop-blur-md transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-mono font-bold text-blue-400">
+                    <span className="text-xs font-mono font-bold text-amber-400">
                       Step {step.number}
                     </span>
-                    <div className="w-8 h-8 rounded-lg bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+                    <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 group-hover:scale-105 transition-transform">
                       <Icon className="w-4 h-4" />
                     </div>
                   </div>
 
-                  <h3 className="text-base font-bold text-white mb-1">{step.title}</h3>
-                  <div className="text-xs font-medium text-slate-400 mb-3 italic">
+                  <h3 className="text-base font-bold text-white mb-1 font-heading group-hover:text-amber-300 transition-colors">
+                    {step.title}
+                  </h3>
+                  <div className="text-xs font-medium text-amber-300/80 mb-3 italic">
                     {step.tagline}
                   </div>
-                  <p className="text-xs text-slate-400 leading-relaxed font-normal">
+                  <p className="text-xs text-slate-300 leading-relaxed font-normal">
                     {step.desc}
                   </p>
                 </div>
 
-                <div className="mt-5 pt-3 border-t border-slate-900 text-[10px] text-slate-500 font-mono">
+                <div className="mt-5 pt-3 border-t border-[#142845] text-[10px] text-slate-400 font-mono">
                   Phase Verification Signoff
                 </div>
               </div>

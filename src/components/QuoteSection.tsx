@@ -112,15 +112,17 @@ export const QuoteSection: React.FC<QuoteSectionProps> = ({ initialService, onSu
   };
 
   return (
-    <section id="quote" className="py-20 bg-slate-950 border-b border-slate-850">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="quote" className="py-20 bg-[#061224] border-b border-[#142845] relative overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[500px] bg-amber-500/5 blur-[150px] rounded-full pointer-events-none" />
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="text-xs font-semibold uppercase tracking-widest text-blue-400 mb-2">
+          <div className="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-2">
             Project Quotation & Scoping
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight [text-wrap:balance]">
-            Request an Intelligent Project Quotation
+          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight font-heading [text-wrap:balance]">
+            Request an Intelligent Project Quotation<span className="text-amber-400">.</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-300 font-normal">
             Detail your specifications and technology requirements. Our solution architects will analyze
@@ -130,15 +132,15 @@ export const QuoteSection: React.FC<QuoteSectionProps> = ({ initialService, onSu
 
         {/* Confirmation State */}
         {submittedQuote ? (
-          <div className="p-8 sm:p-12 rounded-2xl bg-slate-900 border border-emerald-500/40 text-center animate-in zoom-in-95 duration-200">
-            <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto mb-5">
+          <div className="p-8 sm:p-12 rounded-2xl bg-[#091b35] border border-amber-500/40 text-center animate-in zoom-in-95 duration-200 shadow-2xl shadow-black/40">
+            <div className="w-16 h-16 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center mx-auto mb-5">
               <CheckCircle2 className="w-8 h-8" />
             </div>
 
-            <div className="text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-1">
+            <div className="text-xs font-semibold uppercase tracking-wider text-amber-400 mb-1 font-heading">
               Quotation Request Received
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2">
+            <h3 className="text-2xl font-bold text-white mb-2 font-heading">
               Thank You, {submittedQuote.fullName}
             </h3>
 
@@ -148,16 +150,16 @@ export const QuoteSection: React.FC<QuoteSectionProps> = ({ initialService, onSu
             </p>
 
             {/* Reference Card */}
-            <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 max-w-md mx-auto mb-8 text-left text-xs space-y-2">
-              <div className="flex justify-between border-b border-slate-850 pb-2">
+            <div className="p-5 rounded-xl bg-[#071325] border border-[#142845] max-w-md mx-auto mb-8 text-left text-xs space-y-2.5">
+              <div className="flex justify-between border-b border-[#142845] pb-2.5">
                 <span className="text-slate-400">Reference Number:</span>
-                <span className="font-mono font-bold text-blue-400">{submittedQuote.referenceNo}</span>
+                <span className="font-mono font-bold text-amber-400">{submittedQuote.referenceNo}</span>
               </div>
-              <div className="flex justify-between border-b border-slate-850 pb-2">
+              <div className="flex justify-between border-b border-[#142845] pb-2.5">
                 <span className="text-slate-400">Service:</span>
                 <span className="text-white font-medium">{submittedQuote.serviceRequired}</span>
               </div>
-              <div className="flex justify-between border-b border-slate-850 pb-2">
+              <div className="flex justify-between border-b border-[#142845] pb-2.5">
                 <span className="text-slate-400">Estimated Budget:</span>
                 <span className="text-white font-medium">{submittedQuote.estimatedBudget}</span>
               </div>
@@ -172,7 +174,7 @@ export const QuoteSection: React.FC<QuoteSectionProps> = ({ initialService, onSu
             <div className="flex items-center justify-center gap-4">
               <button
                 onClick={handleReset}
-                className="px-5 py-2.5 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800 rounded-lg transition-colors cursor-pointer"
+                className="px-6 py-2.5 text-xs font-semibold text-slate-300 hover:text-white bg-[#0d223f] border border-[#1e3b66] hover:border-amber-500/40 rounded-lg transition-colors cursor-pointer"
               >
                 Submit Another Request
               </button>
@@ -182,7 +184,7 @@ export const QuoteSection: React.FC<QuoteSectionProps> = ({ initialService, onSu
           /* Form State */
           <form
             onSubmit={handleSubmit}
-            className="p-6 sm:p-10 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-8"
+            className="p-6 sm:p-10 rounded-2xl bg-[#091b35]/80 border border-[#142845] backdrop-blur-md shadow-2xl shadow-black/20 space-y-8"
           >
             {errorMsg && (
               <div className="p-4 rounded-xl bg-red-950/60 border border-red-500/40 text-red-200 text-xs flex items-center gap-3">
@@ -194,8 +196,8 @@ export const QuoteSection: React.FC<QuoteSectionProps> = ({ initialService, onSu
             {/* Step 1: Select Service */}
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-xs font-mono font-bold text-blue-400">01.</span>
-                <label className="text-sm font-bold text-white">Select Required ICT Practice</label>
+                <span className="text-xs font-mono font-bold text-amber-400">01.</span>
+                <label className="text-sm font-bold text-white font-heading">Select Required ICT Practice</label>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                 {serviceOptions.map((serv) => (
@@ -203,10 +205,10 @@ export const QuoteSection: React.FC<QuoteSectionProps> = ({ initialService, onSu
                     type="button"
                     key={serv}
                     onClick={() => setFormData({ ...formData, serviceRequired: serv })}
-                    className={`p-3 text-left rounded-lg text-xs font-medium transition-all cursor-pointer ${
+                    className={`p-3 text-left rounded-lg text-xs font-medium transition-all cursor-pointer font-heading ${
                       formData.serviceRequired === serv
-                        ? 'bg-blue-600 text-white shadow-md shadow-blue-600/20'
-                        : 'bg-slate-950 text-slate-300 hover:bg-slate-800 border border-slate-800'
+                        ? 'bg-amber-400 text-slate-950 font-bold shadow-md shadow-amber-400/25'
+                        : 'bg-[#071325] text-slate-300 hover:bg-[#0c2242] hover:text-white border border-[#142845]'
                     }`}
                   >
                     {serv}
@@ -218,15 +220,15 @@ export const QuoteSection: React.FC<QuoteSectionProps> = ({ initialService, onSu
             {/* Step 2: Project Scope */}
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-xs font-mono font-bold text-blue-400">02.</span>
-                <label className="text-sm font-bold text-white">Project Scope & Core Deliverables</label>
+                <span className="text-xs font-mono font-bold text-amber-400">02.</span>
+                <label className="text-sm font-bold text-white font-heading">Project Scope & Core Deliverables</label>
               </div>
               <textarea
                 rows={4}
                 value={formData.projectScope}
                 onChange={(e) => setFormData({ ...formData, projectScope: e.target.value })}
                 placeholder="Describe your operational goals, existing systems, target users, specific workflows or integration requirements..."
-                className="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+                className="w-full bg-[#071325] border border-[#142845] rounded-xl p-4 text-xs sm:text-sm text-white placeholder-slate-400 focus:outline-none focus:border-amber-400 transition-colors"
                 required
               />
             </div>
@@ -234,16 +236,16 @@ export const QuoteSection: React.FC<QuoteSectionProps> = ({ initialService, onSu
             {/* Step 3: Budget & Timeline */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <label className="text-xs font-semibold text-slate-300 block mb-2">
+                <label className="text-xs font-semibold text-slate-200 block mb-2 font-heading">
                   Target Budget Bracket
                 </label>
                 <select
                   value={formData.estimatedBudget}
                   onChange={(e) => setFormData({ ...formData, estimatedBudget: e.target.value })}
-                  className="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-xs text-white focus:outline-none focus:border-blue-500"
+                  className="w-full bg-[#071325] border border-[#142845] rounded-lg p-3 text-xs text-white focus:outline-none focus:border-amber-400"
                 >
                   {budgetOptions.map((opt) => (
-                    <option key={opt} value={opt}>
+                    <option key={opt} value={opt} className="bg-[#071325]">
                       {opt}
                     </option>
                   ))}
@@ -251,16 +253,16 @@ export const QuoteSection: React.FC<QuoteSectionProps> = ({ initialService, onSu
               </div>
 
               <div>
-                <label className="text-xs font-semibold text-slate-300 block mb-2">
+                <label className="text-xs font-semibold text-slate-200 block mb-2 font-heading">
                   Expected Completion Timeline
                 </label>
                 <select
                   value={formData.timeline}
                   onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-                  className="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-xs text-white focus:outline-none focus:border-blue-500"
+                  className="w-full bg-[#071325] border border-[#142845] rounded-lg p-3 text-xs text-white focus:outline-none focus:border-amber-400"
                 >
                   {timelineOptions.map((opt) => (
-                    <option key={opt} value={opt}>
+                    <option key={opt} value={opt} className="bg-[#071325]">
                       {opt}
                     </option>
                   ))}
@@ -271,12 +273,12 @@ export const QuoteSection: React.FC<QuoteSectionProps> = ({ initialService, onSu
             {/* Step 4: Contact Details */}
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-xs font-mono font-bold text-blue-400">03.</span>
-                <label className="text-sm font-bold text-white">Your Contact Information</label>
+                <span className="text-xs font-mono font-bold text-amber-400">03.</span>
+                <label className="text-sm font-bold text-white font-heading">Your Contact Information</label>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-[11px] font-medium text-slate-400 block mb-1">
+                  <label className="text-[11px] font-medium text-slate-300 block mb-1">
                     Full Name *
                   </label>
                   <input
@@ -285,12 +287,12 @@ export const QuoteSection: React.FC<QuoteSectionProps> = ({ initialService, onSu
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                     placeholder="e.g. Mulenga Mwape"
-                    className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-blue-500"
+                    className="w-full bg-[#071325] border border-[#142845] rounded-lg p-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-400"
                   />
                 </div>
 
                 <div>
-                  <label className="text-[11px] font-medium text-slate-400 block mb-1">
+                  <label className="text-[11px] font-medium text-slate-300 block mb-1">
                     Corporate Email *
                   </label>
                   <input
@@ -299,12 +301,12 @@ export const QuoteSection: React.FC<QuoteSectionProps> = ({ initialService, onSu
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="e.g. m.mwape@company.co"
-                    className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-blue-500"
+                    className="w-full bg-[#071325] border border-[#142845] rounded-lg p-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-400"
                   />
                 </div>
 
                 <div>
-                  <label className="text-[11px] font-medium text-slate-400 block mb-1">
+                  <label className="text-[11px] font-medium text-slate-300 block mb-1">
                     Phone Number
                   </label>
                   <input
@@ -312,12 +314,12 @@ export const QuoteSection: React.FC<QuoteSectionProps> = ({ initialService, onSu
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="e.g. +260 97 1234567"
-                    className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-blue-500"
+                    className="w-full bg-[#071325] border border-[#142845] rounded-lg p-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-400"
                   />
                 </div>
 
                 <div>
-                  <label className="text-[11px] font-medium text-slate-400 block mb-1">
+                  <label className="text-[11px] font-medium text-slate-300 block mb-1">
                     Organization / Institution
                   </label>
                   <input
@@ -325,7 +327,7 @@ export const QuoteSection: React.FC<QuoteSectionProps> = ({ initialService, onSu
                     value={formData.organization}
                     onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
                     placeholder="e.g. Apex Holdings Ltd"
-                    className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-blue-500"
+                    className="w-full bg-[#071325] border border-[#142845] rounded-lg p-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-400"
                   />
                 </div>
               </div>
@@ -333,7 +335,7 @@ export const QuoteSection: React.FC<QuoteSectionProps> = ({ initialService, onSu
 
             {/* Additional notes */}
             <div>
-              <label className="text-[11px] font-medium text-slate-400 block mb-1">
+              <label className="text-[11px] font-medium text-slate-300 block mb-1">
                 Additional Notes or Special Considerations (Optional)
               </label>
               <input
@@ -341,12 +343,12 @@ export const QuoteSection: React.FC<QuoteSectionProps> = ({ initialService, onSu
                 value={formData.notes}
                 onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                 placeholder="e.g. Requires on-premises data center deployment or legacy ERP bridge..."
-                className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-blue-500"
+                className="w-full bg-[#071325] border border-[#142845] rounded-lg p-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-400"
               />
             </div>
 
             {/* Submit Button */}
-            <div className="pt-4 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="pt-4 border-t border-[#142845] flex flex-col sm:flex-row items-center justify-between gap-4">
               <span className="text-xs text-slate-400 text-center sm:text-left">
                 All inquiries are protected by strict corporate confidentiality.
               </span>
@@ -354,14 +356,14 @@ export const QuoteSection: React.FC<QuoteSectionProps> = ({ initialService, onSu
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-500 active:bg-blue-700 disabled:opacity-50 rounded-lg shadow-lg shadow-blue-600/25 transition-all cursor-pointer whitespace-nowrap"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs font-bold uppercase tracking-wider text-slate-950 bg-amber-400 hover:bg-amber-300 active:bg-amber-500 disabled:opacity-50 rounded-md shadow-lg shadow-amber-400/25 transition-all cursor-pointer whitespace-nowrap"
               >
                 {isSubmitting ? (
                   <span>Processing Request...</span>
                 ) : (
                   <>
                     <span>Submit Quotation Request</span>
-                    <Send className="w-3.5 h-3.5" />
+                    <Send className="w-3.5 h-3.5 text-slate-950" />
                   </>
                 )}
               </button>

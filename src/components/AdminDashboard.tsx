@@ -410,17 +410,17 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-black/90 backdrop-blur-md flex items-center justify-center p-2 sm:p-4">
-      <div className="relative w-full max-w-6xl h-[92vh] bg-slate-950 border border-slate-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden">
+      <div className="relative w-full max-w-6xl h-[92vh] bg-[#071325] border border-[#142845] rounded-2xl shadow-2xl flex flex-col overflow-hidden">
         {/* Top Header */}
-        <div className="h-16 px-6 bg-slate-900 border-b border-slate-800 flex items-center justify-between shrink-0">
+        <div className="h-16 px-6 bg-[#091b35] border-b border-[#142845] flex items-center justify-between shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400">
+            <div className="w-8 h-8 rounded-lg bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400">
               <Shield className="w-4 h-4" />
             </div>
             <div>
               <div className="text-sm font-bold text-white flex items-center gap-2">
-                <span>Digital Minds Ltd · Administration Console</span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-950 text-blue-400 border border-blue-800">
+                <span className="font-heading">Digital Minds Ltd · Administration Console</span>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#061224] text-amber-400 border border-[#142845]">
                   v2.6 Production
                 </span>
               </div>
@@ -434,7 +434,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
             {token && (
               <button
                 onClick={handleLogout}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-750 transition-colors cursor-pointer"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs text-slate-400 hover:text-white bg-[#061224] border border-[#142845] hover:border-amber-400/30 transition-colors cursor-pointer"
                 title="Log out"
               >
                 <LogOut className="w-3.5 h-3.5" />
@@ -443,7 +443,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
             )}
             <button
               onClick={onClose}
-              className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
+              className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-[#142845] transition-colors cursor-pointer"
               aria-label="Close"
             >
               <X className="w-5 h-5" />
@@ -470,13 +470,13 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
         {/* Content Area */}
         {!token ? (
           /* Login Screen */
-          <div className="flex-1 flex items-center justify-center p-6 bg-slate-950">
-            <div className="w-full max-w-md p-8 rounded-2xl bg-slate-900 border border-slate-800 shadow-xl">
-              <div className="w-12 h-12 rounded-xl bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mx-auto mb-4">
+          <div className="flex-1 flex items-center justify-center p-6 bg-[#061224]">
+            <div className="w-full max-w-md p-8 rounded-2xl bg-[#091b35] border border-[#142845] shadow-xl">
+              <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mx-auto mb-4">
                 <Lock className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold text-white text-center mb-1">
-                Administrator Authentication
+              <h3 className="font-heading text-xl font-bold text-white text-center mb-1">
+                Administrator Authentication<span className="text-amber-400">.</span>
               </h3>
               <p className="text-xs text-slate-400 text-center mb-6">
                 Enter your administrative credentials to manage communications, quotations, and content.
@@ -499,7 +499,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                     required
                     value={loginEmail}
                     onChange={(e) => setLoginEmail(e.target.value)}
-                    className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-blue-500"
+                    className="w-full bg-[#061224] border border-[#142845] rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-amber-400"
                   />
                 </div>
 
@@ -512,21 +512,21 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                     required
                     value={loginPassword}
                     onChange={(e) => setLoginPassword(e.target.value)}
-                    className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-blue-500"
+                    className="w-full bg-[#061224] border border-[#142845] rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-amber-400"
                   />
                 </div>
 
-                <div className="p-3 rounded-lg bg-slate-950 border border-slate-850 text-[11px] text-slate-400">
+                <div className="p-3 rounded-lg bg-[#061224] border border-[#142845] text-[11px] text-slate-400">
                   <span className="font-semibold text-slate-300 block">Default Credentials:</span>
-                  Username: <code className="text-blue-400 font-mono">admin@digitalminds.com</code>
+                  Username: <code className="text-amber-400 font-mono">admin@digitalminds.com</code>
                   <br />
-                  Password: <code className="text-blue-400 font-mono">admin123</code>
+                  Password: <code className="text-amber-400 font-mono">admin123</code>
                 </div>
 
                 <button
                   type="submit"
                   disabled={loginLoading}
-                  className="w-full py-2.5 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-lg transition-colors cursor-pointer"
+                  className="w-full py-2.5 text-xs font-semibold text-slate-950 bg-amber-400 hover:bg-amber-300 rounded-lg transition-colors cursor-pointer shadow-md shadow-amber-400/20"
                 >
                   {loginLoading ? 'Authenticating...' : 'Sign In to Dashboard'}
                 </button>
@@ -537,14 +537,14 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
           /* Main Dashboard Layout */
           <div className="flex-1 flex overflow-hidden">
             {/* Sidebar Navigation */}
-            <div className="w-56 bg-slate-900 border-r border-slate-800 p-4 flex flex-col justify-between shrink-0">
+            <div className="w-56 bg-[#091b35] border-r border-[#142845] p-4 flex flex-col justify-between shrink-0">
               <div className="space-y-1">
                 <button
                   onClick={() => setActiveModule('overview')}
-                  className={`w-full text-left flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+                  className={`w-full text-left flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
                     activeModule === 'overview'
-                      ? 'bg-blue-600 text-white'
-                      : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                      ? 'bg-amber-400 text-slate-950 shadow-md shadow-amber-400/20'
+                      : 'text-slate-400 hover:text-white hover:bg-[#142845]'
                   }`}
                 >
                   <Layers className="w-4 h-4" />
@@ -553,10 +553,10 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
                 <button
                   onClick={() => setActiveModule('inquiries')}
-                  className={`w-full text-left flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+                  className={`w-full text-left flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
                     activeModule === 'inquiries'
-                      ? 'bg-blue-600 text-white'
-                      : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                      ? 'bg-amber-400 text-slate-950 shadow-md shadow-amber-400/20'
+                      : 'text-slate-400 hover:text-white hover:bg-[#142845]'
                   }`}
                 >
                   <div className="flex items-center gap-2.5">
@@ -564,7 +564,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                     <span>Inquiries</span>
                   </div>
                   {inquiries.filter((i) => i.status === 'new').length > 0 && (
-                    <span className="px-1.5 py-0.5 rounded-full text-[10px] bg-blue-400 text-slate-950 font-bold">
+                    <span className="px-1.5 py-0.5 rounded-full text-[10px] bg-amber-500 text-slate-950 font-bold">
                       {inquiries.filter((i) => i.status === 'new').length}
                     </span>
                   )}
@@ -572,10 +572,10 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
                 <button
                   onClick={() => setActiveModule('quotes')}
-                  className={`w-full text-left flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+                  className={`w-full text-left flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
                     activeModule === 'quotes'
-                      ? 'bg-blue-600 text-white'
-                      : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                      ? 'bg-amber-400 text-slate-950 shadow-md shadow-amber-400/20'
+                      : 'text-slate-400 hover:text-white hover:bg-[#142845]'
                   }`}
                 >
                   <div className="flex items-center gap-2.5">
@@ -583,7 +583,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                     <span>Quote Requests</span>
                   </div>
                   {quotes.filter((q) => q.status === 'pending').length > 0 && (
-                    <span className="px-1.5 py-0.5 rounded-full text-[10px] bg-amber-400 text-slate-950 font-bold">
+                    <span className="px-1.5 py-0.5 rounded-full text-[10px] bg-amber-500 text-slate-950 font-bold">
                       {quotes.filter((q) => q.status === 'pending').length}
                     </span>
                   )}
@@ -591,10 +591,10 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
                 <button
                   onClick={() => setActiveModule('projects')}
-                  className={`w-full text-left flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+                  className={`w-full text-left flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
                     activeModule === 'projects'
-                      ? 'bg-blue-600 text-white'
-                      : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                      ? 'bg-amber-400 text-slate-950 shadow-md shadow-amber-400/20'
+                      : 'text-slate-400 hover:text-white hover:bg-[#142845]'
                   }`}
                 >
                   <Layers className="w-4 h-4" />
@@ -603,10 +603,10 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
                 <button
                   onClick={() => setActiveModule('articles')}
-                  className={`w-full text-left flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+                  className={`w-full text-left flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
                     activeModule === 'articles'
-                      ? 'bg-blue-600 text-white'
-                      : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                      ? 'bg-amber-400 text-slate-950 shadow-md shadow-amber-400/20'
+                      : 'text-slate-400 hover:text-white hover:bg-[#142845]'
                   }`}
                 >
                   <BookOpen className="w-4 h-4" />
@@ -615,10 +615,10 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
                 <button
                   onClick={() => setActiveModule('testimonials')}
-                  className={`w-full text-left flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+                  className={`w-full text-left flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
                     activeModule === 'testimonials'
-                      ? 'bg-blue-600 text-white'
-                      : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                      ? 'bg-amber-400 text-slate-950 shadow-md shadow-amber-400/20'
+                      : 'text-slate-400 hover:text-white hover:bg-[#142845]'
                   }`}
                 >
                   <MessageSquare className="w-4 h-4" />
@@ -627,10 +627,10 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
                 <button
                   onClick={() => setActiveModule('settings')}
-                  className={`w-full text-left flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+                  className={`w-full text-left flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
                     activeModule === 'settings'
-                      ? 'bg-blue-600 text-white'
-                      : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                      ? 'bg-amber-400 text-slate-950 shadow-md shadow-amber-400/20'
+                      : 'text-slate-400 hover:text-white hover:bg-[#142845]'
                   }`}
                 >
                   <Settings className="w-4 h-4" />
@@ -638,10 +638,10 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                 </button>
               </div>
 
-              <div className="pt-4 border-t border-slate-800 text-[11px] text-slate-500">
+              <div className="pt-4 border-t border-[#142845] text-[11px] text-slate-400">
                 Logged in as Super Admin
                 <br />
-                <span className="text-slate-400 font-mono">admin@digitalminds.com</span>
+                <span className="text-amber-400 font-mono">admin@digitalminds.com</span>
               </div>
             </div>
 
