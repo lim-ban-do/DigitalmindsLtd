@@ -13,7 +13,7 @@ export const Hero: React.FC<HeroProps> = ({
   onSelectSolution
 }) => {
   return (
-    <section className="relative overflow-hidden bg-[#071325] border-b border-[#142845] min-h-[580px] lg:min-h-[640px] flex items-center">
+    <section className="relative overflow-hidden bg-white border-b border-slate-200 min-h-[580px] lg:min-h-[640px] flex items-center">
       {/* High-Impact Panoramic Twilight Engineering Visual */}
       <div className="absolute inset-0 z-0">
         <img
