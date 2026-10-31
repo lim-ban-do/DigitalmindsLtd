@@ -1,0 +1,6 @@
+{
+  "name": "Digital Minds Ltd - Corporate ICT & Technology Solutions",
+  "description": "Official corporate website and business platform for Digital Minds Ltd. Think Digital. Build Intelligent Solutions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
