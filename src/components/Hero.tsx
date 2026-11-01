@@ -49,7 +49,7 @@ export const Hero: React.FC<HeroProps> = ({
 
             {/* Main Headline - Bold, clean modern sans with signature amber dot */}
             <h1 className="text-3xl sm:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight text-white leading-[1.12] mb-6 font-heading [text-wrap:balance]">
-              We Deliver High-Quality Engineering Projects<span className="text-amber-400">.</span>
+              We Deliver High-Quality Software Engineering projects & Computer Systems<span className="text-amber-400">.</span>
             </h1>
 
             {/* Description */}
