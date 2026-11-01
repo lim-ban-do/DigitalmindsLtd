@@ -85,11 +85,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Main Navigation Bar */}
       <header
-        className={`sticky top-0 z-40 transition-all duration-200 ${
-          scrolled
+        className={`sticky top-0 z-40 transition-all duration-200 ${scrolled
             ? 'bg-[#071325]/95 backdrop-blur-md border-b border-[#142845] shadow-lg shadow-black/30'
             : 'bg-[#071325]/85 backdrop-blur-sm border-b border-[#10223b]'
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-6 h-18">
@@ -122,11 +121,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <button
                     key={link.id}
                     onClick={() => handleNavClick(link.id)}
-                    className={`px-3.5 py-2 rounded-md transition-all whitespace-nowrap shrink-0 text-sm font-medium font-heading cursor-pointer ${
-                      isActive
+                    className={`px-3.5 py-2 rounded-md transition-all whitespace-nowrap shrink-0 text-sm font-medium font-heading cursor-pointer ${isActive
                         ? 'text-amber-400 bg-[#0d223f] border border-amber-500/25 shadow-sm'
                         : 'text-slate-200 hover:text-white hover:bg-[#0c1f38]'
-                    }`}
+                      }`}
                   >
                     {link.label}
                   </button>
@@ -147,13 +145,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <span className="font-heading tracking-wide text-amber-300 font-semibold">{phoneDisplay}</span>
               </a>
 
-              <button
-                onClick={() => openQuoteModal()}
-                className="inline-flex items-center justify-center gap-2 px-4.5 py-2 text-xs md:text-sm font-bold uppercase tracking-wider text-slate-950 bg-amber-400 hover:bg-amber-300 active:bg-amber-500 rounded-md shadow-sm shadow-amber-400/25 transition-all whitespace-nowrap shrink-0 cursor-pointer"
-              >
-                <span>Request a Quote</span>
-                <ArrowRight className="w-4 h-4 text-slate-950" />
-              </button>
+
 
               {/* Mobile hamburger button */}
               <button
@@ -177,11 +169,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <button
                     key={link.id}
                     onClick={() => handleNavClick(link.id)}
-                    className={`text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-colors font-heading ${
-                      isActive
+                    className={`text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-colors font-heading ${isActive
                         ? 'bg-amber-500/15 text-amber-400 border border-amber-500/30'
                         : 'text-slate-300 hover:bg-[#0d223f] hover:text-white'
-                    }`}
+                      }`}
                   >
                     {link.label}
                   </button>
